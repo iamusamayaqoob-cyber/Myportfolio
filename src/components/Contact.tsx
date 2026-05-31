@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Phone, Mail, MapPin, Send, Check, Clock, AlertCircle } from 'lucide-react';
+import { Phone, Mail, MapPin, Send, Check, Clock, AlertCircle, MessageCircle } from 'lucide-react';
 import { PERSONAL_INFO } from '../data';
 
 export default function Contact() {
@@ -130,6 +130,28 @@ export default function Contact() {
                   >
                     {copiedField === 'phone' ? 'Copied' : 'Copy'}
                   </button>
+                </div>
+
+                {/* WhatsApp direct chat link */}
+                <div className="flex items-center gap-4 bg-[#25D366]/5 p-4 border border-[#25D366]/20 group rounded-2xl hover:border-[#25D366]/50 transition-colors">
+                  <div className="w-11 h-11 rounded-xl bg-[#25D366] flex items-center justify-center text-white shrink-0 shadow-lg shadow-[#25D366]/10">
+                    <MessageCircle className="w-5 h-5 fill-transparent" />
+                  </div>
+                  <div className="flex-1">
+                    <span className="block font-mono text-[9px] text-[#25D366] uppercase font-bold">WhatsApp Business</span>
+                    <a href="https://wa.me/923079989925" target="_blank" rel="noopener noreferrer" className="font-sans font-bold text-sm sm:text-base text-white hover:text-[#25D366] transition-colors mt-0.5 block">
+                      0307 9989925
+                    </a>
+                  </div>
+                  <a
+                    href="https://wa.me/923079989925?text=Hello%20Usama,%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20hire%20you%20for%20a%20project!"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-mono text-[10px] text-white font-extrabold px-3 py-1.5 bg-[#25D366] hover:bg-[#20ba5a] rounded-lg cursor-pointer shadow-md transition-colors"
+                    id="contact-whatsapp-btn"
+                  >
+                    Chat
+                  </a>
                 </div>
 
                 {/* Corporate Email */}

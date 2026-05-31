@@ -17,6 +17,7 @@ import SoftSkillsHobbies from './components/SoftSkillsHobbies';
 import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import FloatingWhatsApp from './components/FloatingWhatsApp';
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -130,6 +131,9 @@ export default function App() {
               {/* Section 11: Validated maps feedback forms */}
               <Contact />
             </main>
+
+            {/* Floating Action WhatsApp chat helper */}
+            <FloatingWhatsApp />
 
             {/* Section 12: Signature footer */}
             <Footer />

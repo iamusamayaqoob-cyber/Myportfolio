@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { ArrowRight, Sparkles, FolderKanban, ShieldCheck, Mail } from 'lucide-react';
+import { ArrowRight, Sparkles, FolderKanban, ShieldCheck, Mail, MessageCircle } from 'lucide-react';
 import { PERSONAL_INFO } from '../data';
 
 export default function Hero() {
@@ -93,27 +93,38 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto pt-4"
+            className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto pt-4"
             id="hero-ctas"
           >
             <button
                onClick={() => scrollToSection('contact')}
-               className="group flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-vibrant-orange text-white font-sans text-sm font-bold uppercase tracking-wider hover:bg-vibrant-orange/90 active:scale-98 hover:shadow-xl hover:shadow-vibrant-orange/20 transition-all cursor-pointer shadow-md"
+               className="group flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-vibrant-orange text-white font-sans text-xs sm:text-sm font-bold uppercase tracking-wider hover:bg-vibrant-orange/90 active:scale-98 hover:shadow-xl hover:shadow-vibrant-orange/20 transition-all cursor-pointer shadow-md"
                id="hero-primary-cta"
              >
                <Mail className="w-4 h-4 group-hover:-translate-y-0.5 transition-transform" />
                Hire Me Today
                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
              </button>
+
+             <a
+               href="https://wa.me/923079989925?text=Hello%20Usama,%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20hire%20you%20for%20a%20project!"
+               target="_blank"
+               rel="noopener noreferrer"
+               className="group flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-[#25D366]/90 text-white font-sans text-xs sm:text-sm font-extrabold uppercase tracking-wider hover:bg-[#25D366] active:scale-98 hover:shadow-xl hover:shadow-[#25D366]/20 transition-all cursor-pointer shadow-md"
+               id="hero-whatsapp-cta"
+             >
+               <MessageCircle className="w-4 h-4 fill-transparent" />
+               WhatsApp
+             </a>
  
              <button
                onClick={() => scrollToSection('portfolio')}
-               className="group flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-charcoal border border-charcoal hover:border-luxury-gold/30 text-white font-sans text-sm uppercase font-semibold tracking-wider hover:bg-charcoal/80 transition-all cursor-pointer"
+               className="group flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-charcoal border border-charcoal hover:border-luxury-gold/30 text-white font-sans text-xs sm:text-sm uppercase font-semibold tracking-wider hover:bg-charcoal/80 transition-all cursor-pointer"
                id="hero-secondary-cta"
              >
                <FolderKanban className="w-4 h-4 text-luxury-gold animate-pulse" />
-              View Portfolio
-            </button>
+               View Portfolio
+             </button>
           </motion.div>
 
           {/* Quick Metrics Trust Signals */}
