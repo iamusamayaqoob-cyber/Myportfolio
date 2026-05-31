@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+:root {
+  --color-gold-custom: #D97706; /* High-contrast gold for light mode text */
+  --color-orange-custom: #EA580C; /* Robust orange for light mode readability */
+  --bg-primary: #F8FAFC; /* Slate-50 background */
+  --bg-secondary: #FFFFFF; /* Pure White card background */
+  --text-primary: #0F172A; /* Slate-900 general header text */
+  --text-muted: #475569; /* Slate-600 descriptions */
+}
+
+.dark {
+  --color-gold-custom: #F59E0B; /* Classic luxury gold */
+  --color-orange-custom: #FF6B35; /* Vibrant agency orange */
+  --bg-primary: #0F172A; /* Deep Navy primary dark bg */
+  --bg-secondary: #111827; /* Charcoal card dark bg */
+  --text-primary: #FFFFFF;
+  --text-muted: #94A3B8; /* Slate-400 description text */
+}
+
+@theme {
+  --color-luxury-gold: var(--color-gold-custom);
+  --color-vibrant-orange: var(--color-orange-custom);
+  --color-deep-navy: var(--bg-primary);
+  --color-charcoal: var(--bg-secondary);
+  --color-soft-gray: var(--text-muted);
+
+  --font-sans: "Space Grotesk", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --animate-spin-slow: spin 30s linear infinite;
+  --animate-pulse-slow: pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Base structural styles to support premium micro-animations */
+html {
+  scroll-behavior: smooth;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Custom selection highlights for elite designer feels */
+::selection {
+  background-color: #FF6B35; /* Vibrant Orange */
+  color: #FFFFFF; /* Pure White */
+}
+
+/* Elegant scrollbar modifications */
+html.dark ::-webkit-scrollbar-track {
+  background: #0F172A;
+}
+html:not(.dark) ::-webkit-scrollbar-track {
+  background: #F8FAFC;
+}
+html.dark ::-webkit-scrollbar-thumb {
+  background: #111827;
+  border: 2px solid #0F172A;
+}
+html:not(.dark) ::-webkit-scrollbar-thumb {
+  background: #E2E8F0;
+  border: 2px solid #F8FAFC;
+}
+
+/* ==============================================
+   LIGHT MODE DESKTOP & MOBILE UX RECOVERIES
+   ============================================== */
+
+html:not(.dark) {
+  background-color: #F8FAFC;
+  color: #1E293B;
+}
+
+/* Redefine overlay grid in light mode */
+html:not(.dark) #ambient-overlay {
+  background: radial-gradient(ellipse 50% 60% at 50% 40%, rgba(226, 232, 240, 0.6), rgba(248, 250, 252, 0.98)) !important;
+}
+
+/* Direct flat color overrides to enforce contrast integrity on headers and titles in Light Mode */
+html:not(.dark) .text-white {
+  color: #0F172A !important;
+}
+
+html:not(.dark) .text-neutral-100,
+html:not(.dark) .text-neutral-200,
+html:not(.dark) .text-neutral-300,
+html:not(.dark) .text-neutral-400 {
+  color: #334155 !important;
+}
+
+/* Ensure card blocks are completely solid white for premium clean shadows */
+html:not(.dark) .bg-charcoal\/40,
+html:not(.dark) .bg-charcoal\/60,
+html:not(.dark) .bg-charcoal\/80,
+html:not(.dark) .bg-charcoal {
+  background-color: #FFFFFF !important;
+}
+
+/* Drawer & Modal Popups integrity in Light Mode */
+html:not(.dark) .bg-deep-navy\/90,
+html:not(.dark) .bg-deep-navy\/95,
+html:not(.dark) .bg-deep-navy\/80,
+html:not(.dark) .bg-charcoal\/95 {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  backdrop-blur-md: 12px;
+}
+
+/* Cards hover state adjustments */
+html:not(.dark) .hover\:bg-charcoal\/80:hover,
+html:not(.dark) .hover\:bg-charcoal:hover {
+  background-color: #F1F5F9 !important;
+}
+
+/* Secondary links, scroll to top icons and elements hover transitions */
+html:not(.dark) .hover\:text-white:hover {
+  color: var(--color-orange-custom) !important;
+}
+
+/* Form block recoveries in Light Mode */
+html:not(.dark) input,
+html:not(.dark) textarea,
+html:not(.dark) select {
+  background-color: #FFFFFF !important;
+  color: #0F172A !important;
+  border-color: #E2E8F0 !important;
+}
+html:not(.dark) input::placeholder,
+html:not(.dark) textarea::placeholder {
+  color: #94A3B8 !important;
+}
+
+/* Active badges, CTA Buttons and internal label texts that MUST remain white */
+html:not(.dark) .bg-vibrant-orange,
+html:not(.dark) .bg-vibrant-orange *,
+html:not(.dark) .bg-luxury-gold,
+html:not(.dark) .bg-luxury-gold *,
+html:not(.dark) button.bg-vibrant-orange,
+html:not(.dark) button.bg-vibrant-orange *,
+html:not(.dark) a.bg-vibrant-orange,
+html:not(.dark) a.bg-vibrant-orange *,
+html:not(.dark) [id*="navlink-desktop"].text-white,
+html:not(.dark) [id*="navlink-mobile"].bg-vibrant-orange,
+html:not(.dark) [id*="navlink-mobile"].bg-vibrant-orange *,
+html:not(.dark) .bg-gradient-to-tr.from-luxury-gold.to-vibrant-orange * {
+  color: #FFFFFF !important;
+}
+
+/* Custom scroll to top and arrows on light mode */
+html:not(.dark) #scroll-to-top-footer {
+  background-color: #FFFFFF !important;
+  border-color: #E2E8F0 !important;
+  color: #475569 !important;
+}
+html:not(.dark) #scroll-to-top-footer:hover {
+  color: var(--color-orange-custom) !important;
+  border-color: var(--color-orange-custom) !important;
+}
+
+/* Slider buttons, details buttons on light mode */
+html:not(.dark) #testimonial-prev-arrow,
+html:not(.dark) #testimonial-next-arrow,
+html:not(.dark) #portfolio-close-modal-btn {
+  background-color: #FFFFFF !important;
+  border-color: #E2E8F0 !important;
+  color: #475569 !important;
+}
+html:not(.dark) #testimonial-prev-arrow:hover,
+html:not(.dark) #testimonial-next-arrow:hover {
+  background-color: #F8FAFC !important;
+  border-color: var(--color-orange-custom) !important;
+  color: var(--color-orange-custom) !important;
+}
+
+/* Ensure custom brand icons and headers resolve nicely */
+html:not(.dark) .text-luxury-gold {
+  color: var(--color-gold-custom) !important;
+}
+
+/* Uniform design border configurations */
+html:not(.dark) .border-charcoal,
+html:not(.dark) .border-charcoal\/80,
+html:not(.dark) .border-charcoal\/85,
+html:not(.dark) .border-neutral-800,
+html:not(.dark) .border-neutral-900 {
+  border-color: rgba(226, 232, 240, 0.95) !important;
+}
+
+/* Grid lines and background accent shadows */
+html:not(.dark) .shadow-2xl {
+  box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.08) !important;
+}
+html:not(.dark) .shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(15, 23, 42, 0.04) !important;
+}
