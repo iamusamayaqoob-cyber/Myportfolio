@@ -1,11 +1,12 @@
 import { PortfolioItem, ServiceItem, SkillItem, ExperienceItem, EducationItem, TestimonialItem } from './types';
+import myProfilePic from '../assets/mypic.jpeg';
 
 export const PERSONAL_INFO = {
   name: 'Usama Yaqoob',
   title: 'Professional Graphic Designer & Video Editor',
   shortBio: 'I create high-impact graphic branding, engaging video edits, professional Reels, modern Promo Ads, and YouTube videos that scale brand awareness.',
   bio: 'A highly creative and detail-oriented Professional Graphic Designer, Video Editor, and Computer Operator based in Rahim Yar Khan, Pakistan. Specialized in translating design concepts into stunning logos and visual graphics, as well as crafting highly professional video content—including viral Reels, Youtube pacing, and engaging promo ads. Also boasting over two years of extensive experience handling secure administration archives and office computer operations.',
-  avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=500&q=80', // Beautiful portrait mockup
+  avatar: myProfilePic,
   phone: '+92 307 9989925',
   email: 'Usamayaqoob250@gmail.com',
   location: 'Rahim Yar Khan, Pakistan',
