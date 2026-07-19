@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { ArrowRight, Sparkles, FolderKanban, ShieldCheck, Mail, MessageCircle } from 'lucide-react';
 import { PERSONAL_INFO } from '../data';
+import myPic from '../../assets/mypic.jpeg';
 
 export default function Hero() {
   const scrollToSection = (id: string) => {
@@ -175,24 +176,15 @@ export default function Hero() {
                 </span>
               </div>
 
-              {/* Graphic Design Abstract Geometry */}
+              {/* Profile Image Display */}
               <div className="relative z-10 flex flex-col items-center justify-center py-4 my-auto">
-                {/* SVG Pencil drafting visual */}
-                <svg
-                  className="w-20 h-20 text-luxury-gold animate-pulse"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5" />
-                  <line x1="12" y1="2" x2="12" y2="22" />
-                  <line x1="12" y1="12" x2="2" y2="8.5" />
-                  <line x1="12" y1="12" x2="22" y2="8.5" />
-                  <circle cx="12" cy="12" r="3" fill="currentColor" className="text-luxury-gold/20" />
-                </svg>
+                <div className="w-40 h-40 sm:w-48 sm:h-48 rounded-2xl overflow-hidden border border-charcoal/60 shadow-xl bg-deep-navy/70">
+                  <img
+                    src={myPic}
+                    alt="Usama Yaqoob"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
 
                 <div className="mt-4 text-center">
                   <span className="font-sans font-bold text-sm tracking-wide text-white block">
